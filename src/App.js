@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/pages/Home";
 import SignUp from "./components/pages/SignUp";
 import Login from "./components/pages/Login";
@@ -17,11 +17,11 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
-            <Route path="/userlist" component={Userlist}/>
-            <Route path="/signup" component={SignUp} />
-            <Route path="/login" component={Login} />
-            <Route path="/protected" component={Protected} />
-            <Route path="/unauthorized" component={Unauthorized} />
+            <Route exact path="/userlist" component={Userlist}/>
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/protected" component={Protected} />
+            <Route exact path="/unauthorized" component={Unauthorized} />
             <Route exact path="/" component={Home} />
           </Switch>
         </Router>
